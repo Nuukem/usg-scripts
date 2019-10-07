@@ -4,7 +4,7 @@
 # Variables you'll need to change
 IPSegment='10.0.'  # The IP address segment your VPN is located on (i.e. '10.0.' or '192.168.1.')
 DestinationEmail='user@example.com'  # Where to send e-mails to
-
+ClientsName='ClientNameHere'
 
 #################################################################################
 ### Don't change anything beyond this point unless you know what you're doing ###
@@ -32,9 +32,9 @@ then
     # Someone connected to/disconnected from the VPN!  Send an e-mail notification
     connInfo=$(</tmp/temp.vpnfulllist)
 
-    echo "Subject: VPN activity detected
+    echo "Subject: VPN activity detected on $ClientsName's network!
 
-    VPN connection activity was detected on your network:
+    VPN connection activity was detected on the network:
 
     $connInfo
     " > /tmp/temp.vpnemail
